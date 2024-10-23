@@ -22,14 +22,14 @@ lmq8267@ubuntu:./rss -u https://github.com/lmq8267/rss_github -c
 ###### 编译：
 ```shell
 #本机编译
-go build -ldflags="-s -w"
+CGO_ENABLED=0 go build -ldflags="-s -w"
 ```
 ```shell
 #交叉编译aarch64
-GOARCH=arm64 GOOS=linux go build -ldflags="-s -w"
+CGO_ENABLED=0 GOARCH=arm64 GOOS=linux go build -ldflags="-s -w"
 ```
 ```shell
 #交叉编译mispel
-GOOS=linux GOARCH=mipsle GOMIPS=softfloat go build -ldflags="-s -w"
+CGO_ENABLED=0 GOOS=linux GOARCH=mipsle GOMIPS=softfloat go build -ldflags="-s -w"
 ```
 
